@@ -1,0 +1,93 @@
+@media (max-width: 320px) {
+    /* #1f2023 */
+
+
+    #root {
+        color: var(--light-mode-color);
+        width: auto;
+        height: 100vh;
+        /* background-color: var(--darkMode-color); */
+        display: grid;
+        grid-template-areas:
+            'header    header'
+            'body      body'
+            'body      body'
+            'body      body'
+            'body      body'
+            'body      body'
+            'body      body'
+            'body      body'
+            'body      body'
+            'body      body'
+            'body      body'
+            'body      body'
+            'body      body'
+            'body      body'
+            'body      body'
+            'body      body'
+            'body      body'
+            'body      body'
+            'body      body'
+            'body      body'
+            'footer    footer';
+        padding: 10;
+    }
+
+    #header {
+        width: 100%;
+        grid-area: header;
+        box-shadow: rgba(255, 255, 255, 0.397) 2px 3px 8px;
+        background-color: var(--darkmode-color-tertiary);
+        text-align: center;
+    }
+
+    #footer {
+        grid-area: footer;
+        background-color: var(--darkmode-color-tertiary);
+        box-shadow: rgba(255, 255, 255, 0.397) 2px 3px 5px;
+        text-align: center;
+    }
+
+    .container {
+        height: 15em;
+    }
+
+    .menu-container {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 60%;
+        background-color: var(--darkmode-color-tertiary);
+        box-shadow: rgba(255, 255, 255, 0.397) 0px 0px 1px;
+        width: 20%;
+    }
+
+    #skeleton {
+        grid-area: body;
+        box-shadow: rgba(255, 255, 255, 0.514) 0px 3px 2px;
+        background-color: var(--darkMode-color-primary);
+
+        #navbar {
+            display: inline-flex;
+            height: 100%;
+            align-items: start;
+
+            #nav-ul {
+                width: 100%;
+                height: 70%;
+                display: flex;
+                justify-content: space-evenly;
+                flex-direction: column;
+
+                li {
+                    list-style: none;
+
+                    .navbar-ul-li-links {
+                        text-decoration: none;
+                        color: var(--light-color-text);
+                    }
+                }
+            }
+        }
+    }
+}

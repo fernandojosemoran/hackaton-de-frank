@@ -1,0 +1,1 @@
+export { default as ThemeLocalStorageHandler } from "./theme_local_storage_handler";

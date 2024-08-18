@@ -1,0 +1,65 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*",
+        "./dist/*"
+      ],
+      "@component/*": [
+        "./src/ui/components/*"
+      ],
+      "@page/*": [
+        "./src/ui/pages/*"
+      ],
+      "@hook/*": [
+        "./src/ui/hooks/*"
+      ],
+      "@domain/*": [
+        "./src/domain/*"
+      ],
+      "@infrastructure/*": [
+        "./src/infrastructure/*"
+      ],
+      "@config/*": [
+        "./src/config/*"
+      ],
+      "@redux/*": [
+        "./src/ui/redux/*"
+      ],
+      "@layout/*": [
+        "./src/ui/layouts/*"
+      ],
+      "@css/*": [
+        "./src/ui/css/*"
+      ],
+      "@ui/*": [
+        "./src/ui/*"
+      ],
+    }
+  },
+  "include": [
+    "src"
+  ]
+}
