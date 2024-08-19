@@ -1,18 +1,25 @@
 import { Footer, Header, Menu } from "@component/index";
+import { Theme } from "@emotion/react";
+import { Container, SxProps } from "@mui/material";
 
 interface LayoutProps {
     children: React.ReactNode;
+}
+
+const cssTemplate: SxProps<Theme> = {
+    padding: 10,
+    height: "100vh"
 }
 
 function Layout({ children }: LayoutProps) {
     return (
         <>
             <Header />
-            <div id="skeleton" className="container-body-skeleton">
+            <div id="skeleton">
                 <Menu />
-                <div>
+                <Container sx={cssTemplate}>
                     {children}
-                </div>
+                </Container>
             </div>
             <Footer />
         </>

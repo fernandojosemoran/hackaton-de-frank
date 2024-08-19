@@ -1,9 +1,12 @@
 import Layout from "@layout/Layout";
+import { Typography } from "@mui/material";
 
 function ReportsPage() {
     return (
         <Layout>
-            <h1>reports</h1>
+            <Typography variant="h2" sx={{ fontSize: 20 }}>
+                reports
+            </Typography>
         </Layout>
     );
 }

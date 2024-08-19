@@ -1,9 +1,12 @@
 import Layout from "@layout/Layout";
+import { Typography } from "@mui/material";
 
 function ConfigPage() {
     return (
         <Layout>
-            <h1>config</h1>
+            <Typography variant="h2" sx={{ fontSize: 20 }}>
+                config
+            </Typography>
         </Layout>
     );
 }

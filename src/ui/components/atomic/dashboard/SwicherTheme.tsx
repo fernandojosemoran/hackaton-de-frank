@@ -1,8 +1,8 @@
 import { Device } from "@/infrastructure/constants/index";
-import { Switch } from "@mui/material";
+import { colors, Switch } from "@mui/material";
 import { useState } from "react";
-import { ThemeLocalStorageHandler } from "@/infrastructure/helpers";
 
+import { ThemeLocalStorageHandler } from "@/infrastructure/helpers";
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import ModeNightIcon from '@mui/icons-material/ModeNight';
 
@@ -17,6 +17,7 @@ function SwitcherTheme() {
             id="switcher-theme-icon"
             defaultChecked={isDarkMode}
             size="medium"
+            sx={{ boxShadow: 2 }}
             onClick={() => {
                 ThemeLocalStorageHandler.verifyTheme();
                 setisChecked(!isChecked)

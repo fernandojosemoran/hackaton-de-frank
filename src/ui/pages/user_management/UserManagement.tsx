@@ -1,9 +1,12 @@
 import Layout from "@/ui/layouts/Layout";
+import { Typography } from "@mui/material";
 
 function UserManagementPage() {
     return (
         <Layout>
-            <h1>User management</h1>
+            <Typography variant="h2" sx={{ fontSize: 20 }}>
+                User management
+            </Typography>
         </Layout>
     );
 }

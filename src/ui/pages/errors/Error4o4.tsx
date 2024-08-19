@@ -1,9 +1,10 @@
+import { Typography } from "@mui/material";
 
 function Error404Page(): React.ReactElement {
     return (
-        <>
-            <h1>Error 404</h1>
-        </>
+        <Typography variant="h1" sx={{ fontSize: 20 }}>
+            Error 404
+        </Typography>
     );
 }
 

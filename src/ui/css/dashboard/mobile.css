@@ -37,13 +37,11 @@
         width: 100%;
         grid-area: header;
         box-shadow: rgba(255, 255, 255, 0.397) 2px 3px 8px;
-        background-color: var(--darkmode-color-tertiary);
         text-align: center;
     }
 
     #footer {
         grid-area: footer;
-        background-color: var(--darkmode-color-tertiary);
         box-shadow: rgba(255, 255, 255, 0.397) 2px 3px 5px;
         text-align: center;
     }
@@ -57,7 +55,6 @@
         flex-direction: column;
         justify-content: space-evenly;
         height: 60%;
-        background-color: var(--darkmode-color-tertiary);
         box-shadow: rgba(255, 255, 255, 0.397) 0px 0px 1px;
         width: 20%;
     }
@@ -65,7 +62,6 @@
     #skeleton {
         grid-area: body;
         box-shadow: rgba(255, 255, 255, 0.514) 0px 3px 2px;
-        background-color: var(--darkMode-color-primary);
 
         #navbar {
             display: inline-flex;

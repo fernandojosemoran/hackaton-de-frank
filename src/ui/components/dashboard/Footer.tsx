@@ -1,8 +1,12 @@
+import { Typography } from "@mui/material";
+
 function Footer(): React.ReactElement {
 
     return (
         <footer id="footer">
-            Hackaton
+            <Typography>
+                Hackaton
+            </Typography>
         </footer>
     );
 }
