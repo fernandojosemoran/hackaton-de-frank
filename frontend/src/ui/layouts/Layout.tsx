@@ -8,6 +8,9 @@ interface LayoutProps {
 
 const cssTemplate: SxProps<Theme> = {
     padding: 10,
+    display: "flex",
+    gap: 10,
+    flexDirection: "column",
     height: "100vh"
 }
 

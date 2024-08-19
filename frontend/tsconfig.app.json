@@ -57,6 +57,9 @@
       "@ui/*": [
         "./src/ui/*"
       ],
+      "@views/*": [
+        "./src/ui/views/*"
+      ],
     }
   },
   "include": [

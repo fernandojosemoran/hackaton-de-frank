@@ -16,6 +16,7 @@ export default defineConfig({
       "@layout": path.resolve(__dirname, "./src/ui/layouts/").toString(),
       "@config": path.resolve(__dirname, "./src/config/").toString(),
       "@ui": path.resolve(__dirname, "./src/ui/").toString(),
+      "@views": path.resolve(__dirname, "./src/ui/views").toString(),
     }
   }
 })

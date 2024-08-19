@@ -56,6 +56,13 @@
         width: 3.7em;
     }
 
+    .menu-decorations {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
     #skeleton {
         display: grid;
         grid-area: body;

@@ -23,6 +23,8 @@ import ManageAccountsRoundedIcon from '@mui/icons-material/ManageAccountsRounded
 import Inventory2RoundedIcon from '@mui/icons-material/Inventory2Rounded';
 import AssessmentRoundedIcon from '@mui/icons-material/AssessmentRounded';
 import SettingsIcon from '@mui/icons-material/Settings';
+import { SwitcherTheme } from "../atomic";
+import { Typography } from "@mui/material";
 
 
 const iconList = [
@@ -134,6 +136,10 @@ function MiniDrawer() {
                     >
                         <MenuIcon />
                     </IconButton>
+                    <div className="menu-decorations">
+                        <Typography>Inventory Management System</Typography>
+                        <SwitcherTheme />
+                    </div>
                 </Toolbar>
             </AppBar>
             <Drawer variant="permanent" open={open}>
