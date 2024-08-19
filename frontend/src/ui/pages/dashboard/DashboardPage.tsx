@@ -20,8 +20,6 @@ const boxesCategories = (bg?: string, color: string = colors.grey[900]): SxProps
 function DashboardPage(): React.ReactNode {
     const colorFont = 400;
 
-    useRef();
-
     return (
         <Layout>
             <Typography variant="h2" sx={{ fontSize: 20 }}>Dashboard</Typography>
