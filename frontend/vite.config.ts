@@ -18,5 +18,8 @@ export default defineConfig({
       "@ui": path.resolve(__dirname, "./src/ui/").toString(),
       "@views": path.resolve(__dirname, "./src/ui/views").toString(),
     }
+  },
+  optimizeDeps: {
+    include: ['@mui/material/Tooltip', '@emotion/styled']
   }
 })

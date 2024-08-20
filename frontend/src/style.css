@@ -1,8 +1,12 @@
 @import url(ui/css/layout/index.css);
+@import url(ui/css/clients/index.css);
+
 /* @import url(ui/css/dashboard/index.css); */
-/* @import url(ui/css/clients/index.css);
-@import url(ui/css/stock_management/);
-@import url(ui/css/user_management/);
-@import url(ui/css/reports/);
-@import url(ui/css/config/);
-@import url(ui/css/erros/); */
+
+/*
+    @import url(ui/css/stock_management/);
+    @import url(ui/css/user_management/);
+    @import url(ui/css/reports/);
+    @import url(ui/css/config/);
+    @import url(ui/css/erros/); 
+*/

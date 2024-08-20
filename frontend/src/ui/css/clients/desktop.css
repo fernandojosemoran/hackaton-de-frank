@@ -1,0 +1,26 @@
+:root {
+    --primary-color: #5e5dc8;
+    --secundary-color: #5973c3;
+    --darkMode-color-primary: #0A0F0D;
+    --darkMode-color-secundary: #111b17;
+    --tertiary-color: #5187bd;
+    --light-mode-color: #f9f6f2;
+    --boxes-general-margin: 2em;
+    --light-color-text: #aba6a6;
+    --general-border-radius: 50px;
+    --font-family-primary: 'Roboto', sans-serif;
+    --font-weight-titles: 700;
+    --font-weight-pharagraps: 400;
+}
+
+@media (min-width: 1000px) {
+    #client-options-bar {
+        color: #5e5dc8
+    }
+
+    .table-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}

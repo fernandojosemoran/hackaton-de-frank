@@ -8,6 +8,9 @@
       "DOM.Iterable"
     ],
     "module": "ESNext",
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
     "skipLibCheck": true,
     /* Bundler mode */
     "moduleResolution": "bundler",
