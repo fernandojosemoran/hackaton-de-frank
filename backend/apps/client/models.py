@@ -21,7 +21,7 @@ class Client(models.Model):
         choices=reputation_options,
         default="None"
     )
-    date_of_birth = models.DateTimeField(auto_created=True)
+    date_of_birth = models.DateField(auto_created=True)
     update_at = models.DateTimeField(auto_now=True)
     create_at = models.DateTimeField(auto_now_add=True)
 
