@@ -4,9 +4,9 @@ function Footer(): React.ReactElement {
 
     return (
         <footer id="footer">
-            <Typography>
+            {/* <Typography>
                 Hackaton
-            </Typography>
+            </Typography> */}
         </footer>
     );
 }

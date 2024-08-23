@@ -43,9 +43,9 @@
 
     #footer {
         grid-area: footer;
-        text-align: center;
+        /* text-align: center;
         display: none;
-        box-shadow: rgba(255, 255, 255, 0.397) 2px 3px 8px;
+        box-shadow: rgba(255, 255, 255, 0.397) 2px 3px 8px; */
     }
 
     .container {

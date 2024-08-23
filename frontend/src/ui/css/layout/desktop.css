@@ -43,8 +43,8 @@
 
     #footer {
         grid-area: footer;
-        text-align: center;
-        box-shadow: rgba(255, 255, 255, 0.397) 2px 3px 8px;
+        /* text-align: center;
+        box-shadow: rgba(255, 255, 255, 0.397) 2px 3px 8px; */
     }
 
     .container {
