@@ -15,7 +15,7 @@ class Product(models.Model):
     name = models.CharField(max_length=255)
     price = models.DecimalField(max_digits=10, decimal_places=2)
 
-    product_status_options = (
+    product_category_options = (
         ('None', 'None'),
         ('Computers & Tablets', 'Computers & Tablets'),
         ('Mobile Phones', 'Mobile Phones'),
@@ -59,7 +59,7 @@ class Product(models.Model):
     )
     category = models.CharField(
         max_length=255,
-        choices=product_status_options,
+        choices=product_category_options,
         default="None"
     )
 

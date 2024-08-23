@@ -1,1 +1,1 @@
-export { default as SwitcherTheme } from "./useSwitcher";
+export { default as UseHttpRequest } from "./use_http_request";

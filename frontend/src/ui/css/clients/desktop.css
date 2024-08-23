@@ -15,7 +15,8 @@
 
 @media (min-width: 1000px) {
     #client-options-bar {
-        color: #5e5dc8
+        background-color: #5187bd;
+        padding: 1em;
     }
 
     .table-container {

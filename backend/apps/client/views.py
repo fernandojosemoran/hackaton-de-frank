@@ -14,102 +14,134 @@ class ClientList(APIView):
     permission_classes = (permissions.AllowAny,)
 
     def get(self, request, format=True):
-        clients = Client.objects.all()
-        paginator = SmallSetPagination()
-        small_paginator_results = paginator.paginate_queryset(clients, request)
+        try:
+            clients = Client.objects.all()
+            paginator = SmallSetPagination()
+            small_paginator_results = paginator.paginate_queryset(
+                clients, request)
 
-        if clients.exists():
-            serializer_clients = ClientSerializer(
-                small_paginator_results,
-                many=True
-            )
-            return paginator.get_paginated_response({
-                'Clients': serializer_clients.data
-            })
+            if clients.exists():
+                serializer_clients = ClientSerializer(
+                    small_paginator_results,
+                    many=True
+                )
+                return paginator.get_paginated_response({
+                    'Clients': serializer_clients.data
+                })
 
-        return Response({'erorr_message': 'Internal Server Error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return Response({"error": "Clients weren't found"}, status=status.HTTP_400_BAD_REQUEST)
+        except:
+            return Response({'erorr_message': 'Internal Server Error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class SearchByName(APIView):
     permission_classes = (permissions.AllowAny,)
 
     def get(self, request, format=True):
-        search_term = request.query_params.get('slug')
+        try:
+            search_term = request.query_params.get('slug')
 
-        print(f"search_term: {search_term}")
+            print(f"search_term: {search_term}")
 
-        clients = Client.objects.filter(name=search_term)
+            clients = Client.objects.filter(name=search_term)
 
-        paginator = SmallSetPagination()
+            paginator = SmallSetPagination()
 
-        small_paginator_results = paginator.paginate_queryset(clients, request)
+            small_paginator_results = paginator.paginate_queryset(
+                clients, request)
 
-        if clients.exists:
-            serializer_clients = ClientSerializer(
-                small_paginator_results,
-                many=True
-            )
+            if clients.exists:
+                serializer_clients = ClientSerializer(
+                    small_paginator_results,
+                    many=True
+                )
 
-            return paginator.get_paginated_response({
-                "Clients": serializer_clients.data
-            })
+                return paginator.get_paginated_response({
+                    "Clients": serializer_clients.data
+                })
 
-        return Response({'erorr_message': 'Internal Server Error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return Response({"error": "Client not found"}, status=status.HTTP_400_BAD_REQUEST)
+        except:
+            return Response({'erorr_message': 'Internal Server Error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class SearchByReputation(APIView):
     permission_classes = (permissions.AllowAny,)
 
     def get(self, request, format=True):
-        search_term = request.query_params.get('slug')
+        try:
 
-        clients = Client.objects.filter(reputation=search_term)
+            search_term = request.query_params.get('slug')
 
-        paginator = SmallSetPagination()
+            clients = Client.objects.filter(reputation=search_term)
 
-        small_paginator_results = paginator.paginate_queryset(clients, request)
+            paginator = SmallSetPagination()
 
-        if clients.exists:
-            serializer_clients = ClientSerializer(
-                small_paginator_results,
-                many=True
+            small_paginator_results = paginator.paginate_queryset(
+                clients, request)
+
+            if clients.exists:
+                serializer_clients = ClientSerializer(
+                    small_paginator_results,
+                    many=True
+                )
+
+                return paginator.get_paginated_response({
+                    "Clients": serializer_clients.data
+                })
+
+            return Response({"error": "Client not found"}, status=status.HTTP_400_BAD_REQUEST)
+
+        except:
+            Response(
+                {"error": "Internal server erorr"},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
-
-            return paginator.get_paginated_response({
-                "Clients": serializer_clients.data
-            })
-
-        return Response({'erorr_message': 'Internal Server Error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class CreateClient(APIView):
     permission_classes = (permissions.AllowAny,)
 
     def post(self, request, format=True):
-        serializer = ClientSerializer(data=request.data)
+        try:
+            serializer = ClientSerializer(data=request.data)
 
-        if serializer.is_valid():
-            serializer.save()
+            if serializer.is_valid():
+                serializer.save()
 
-            return Response({"response": serializer.data}, status=status.HTTP_201_CREATED)
+                return Response({"response": serializer.data}, status=status.HTTP_201_CREATED)
 
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        except:
+            Response(
+                {"error": "Internal server erorr"},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
 
 
 class DeleteClient(APIView):
     permission_classes = (permissions.AllowAny,)
 
     def delete(self, request, format=True):
-        serializer = DeleteClientSerializer(data=request.data)
+        try:
 
-        if serializer.is_valid():
-            try:
+            serializer = DeleteClientSerializer(data=request.data)
+
+            if serializer.is_valid():
+
                 deleted_client = Client.objects.get(
-                    email=request.data["email"])
+                    email=request.data["email"]
+                )
+
                 deleted_client.delete()
-            except:
-                return Response({"message": "User not exist"}, status=status.HTTP_400_BAD_REQUEST)
 
-            return Response({"message": "Client deleted successfully"}, status=status.HTTP_202_ACCEPTED)
+                return Response({"message": "Client deleted successfully"}, status=status.HTTP_301_MOVED_PERMANENTLY)
 
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"message": "User not exist"}, status=status.HTTP_400_BAD_REQUEST)
+
+        except:
+            Response(
+                {"error": "Internal server erorr"},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
